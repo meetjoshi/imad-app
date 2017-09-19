@@ -92,7 +92,7 @@ app.get('/', function (req, res) {
 });
 
 var pool = new Pool(config);
-app.get('test-db', function (req, res) {
+app.get('/test-db', function (req, res) {
     // make a select request
     // return a response with the results
 });

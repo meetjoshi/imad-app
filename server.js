@@ -105,7 +105,7 @@ app.get('/counter', function (req, res) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
-            res.send(JSON.stringify(result));
+            res.send(JSON.stringify(result.rows));
         }
     });
 });

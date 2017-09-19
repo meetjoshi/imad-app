@@ -95,12 +95,6 @@ var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
     // make a select request
     // return a response with the results
-});
-
-var counter = 0;
-app.get('/counter', function (req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
     pool.query('SELECT * FROM test', function (err, result) {
         if (err) {
             res.status(500).send(err.toString());
@@ -108,6 +102,12 @@ app.get('/counter', function (req, res) {
             res.send(JSON.stringify(result.rows));
         }
     });
+});
+
+var counter = 0;
+app.get('/counter', function (req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
 });
 
 var names = [];
